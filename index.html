@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAV財団</title>
+    <meta name="description" content="Misskeyサーバ「すしすきー」の異常現象をフィクションとして紹介するデータベースです。">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="fav.png" type="image/png">
+    <script>
+        // ランダムなユーザ名を生成する関数
+        function generateUsername() {
+            const letters = "abcdefghijklmnopqrstuvwxyz";
+            const randomPrefix = Array.from({ length: 3 }, () => letters[Math.floor(Math.random() * letters.length)]).join("");
+            const randomNumber = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+            return `${randomPrefix}-${randomNumber}`;
+        }
+
+        // 職員ランクをランダムに選ぶ関数
+        function getRandomRank() {
+            const ranks = [
+                { rank: "白皿", color: "#ffffff" },
+                { rank: "青皿", color: "#0000ff" },
+                { rank: "赤皿", color: "#ff0000" },
+                { rank: "黒皿", color: "#888888" }
+            ];
+            return ranks[Math.floor(Math.random() * ranks.length)];
+        }
+
+        // ユーザ名とランクをページに表示
+        function displayUserInfo() {
+            const usernameElement = document.getElementById('username');
+            const rankElement = document.getElementById('rank');
+            if (usernameElement && rankElement) {
+                usernameElement.textContent = generateUsername();
+                const rankInfo = getRandomRank();
+                rankElement.textContent = rankInfo.rank;
+                rankElement.style.color = rankInfo.color;
+            }
+        }
+
+        // ページ読み込み時に実行
+        window.onload = displayUserInfo;
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="container">
+            <img class="site-logo" src="assets/sav_white_logo_transparent.png">
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="index.html">メインページ</a></li>
+                    <li><a href="worldview.html">世界観紹介</a></li>
+                    <li><a href="articles.html">記事一覧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="container">
+            <noscript>
+                <p>
+                    このサイトではギミックとしてJavaScriptを使用していますが、ブラウザでJavaScriptがオフになっています。
+                </p>
+            </noscript>
+            <section class="intro">
+                <p>機密データベースにログインしました</p>
+                <p>現在のユーザ名: <span id="username">読み込み中...</span></p>
+                <p>職員ランク: <span id="rank">読み込み中...</span></p>
+                <h2>ようこそ、<ruby>SAV<rp>(</rp><rt>サブ</rt><rp>)</rp></ruby>財団データベースへ</h2>
+                <p> このサイトでは、異常現象に関する重要情報を保管・管理しています。<br>
+                以下のリンクから情報を探索してください。<br>
+                ここで得た情報は、業務上必要な範囲でのみ使用し、不用意に漏れることがないように厳重に扱ってください。<br>
+                寿司、アンコリーノ、ベジマイト。</p>
+            </section>
+
+            <section class="links">
+                <h3>ナビゲーション</h3>
+                <ul>
+                    <li><a href="worldview.html">世界観を知る</a></li>
+                    <li><a href="articles.html">記事を読む</a></li>
+                </ul>
+                <br>
+                <h3>記事を提供してくださる方へ</h3>
+                <ul>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeua7-W0tVAEUIOy4T6-WbFN-ml68KbFolvlEBC30k-yoivIw/viewform?usp=header" target="_blank">提供フォーム</a></li>
+                </ul>
+                <br>
+                <h3>その他</h3>
+                <ul>
+                    <li><a href="https://sushi.ski/@potatokun" target="_blank">管理者のすしすきーアカウント</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 PotatoTimeKun <br>このサイトはSCP財団のパロディであり、全ての情報はフィクションです。</p>
+        </div>
+    </footer>
+</body>
+</html>
