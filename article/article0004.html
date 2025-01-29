@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAV-0004「12位 4月 3人人がころす」</title>
+    <link rel="stylesheet" href="articlestyle.css?ver=0.1">
+    <link rel="icon" href="../fav.png" type="image/png">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="container">
+            <img class="site-logo" src="../assets/sav_white_logo_transparent.png">
+            <nav class="global-nav">
+                <ul>
+                    <li><a href="../index.html">メインページ</a></li>
+                    <li><a href="../worldview.html">世界観紹介</a></li>
+                    <li><a href="../articles.html">記事一覧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="container">
+            <!-- タイトル -->
+            <article class="anomaly-document">
+                <h2>SAV-0004「12位 4月 3人人がころす」</h2>
+                <h2>危険レベル : アンコ</h2>
+
+                <!-- 収容手順 -->
+                <section class="containment-procedures">
+                    <h3>収容手順</h3>
+                    <p>
+                        SAV-0004は市販されているUSBメモリに保存し、セクターMの第2保護局で金属ロッカーに施錠して保管されます。<br>
+                        データの消失を防ぐためにUSBメモリは5年ほどで交換し、バックアップとして磁気媒体に保存したものをセクターDで同様の方法で保管します。
+                    </p>
+                </section>
+
+                <!-- 説明 -->
+                <section class="description">
+                    <h3>説明</h3>
+                    <p>
+                        SAV-0004は一般的なPythonプログラムのように見える電子的に保存されたコード群です。main.pyとbase.png、ライブラリ群によって構成されます。<br>
+                        SAV-0004によって生成された画像はSAV-0004-1に指定されます。<br>
+                        <s>SAV-0004を使用した実験では観測者からの報告を受けたあと安全が確認されるまで必要な処置を取ってください。</s>SAV-0004を使用した実験は現在許可されていません。
+                    </p>
+                </section>
+
+                <!-- アーカイブ -->
+                <section class="archive">
+                    <h3>アーカイブ</h3>
+                    <p>2024/08/10</p>
+                    <p>
+                        選ばれしもの-mse-imが「ネット上で奇妙なプログラムを発見した」としてSAV-0004が財団に提供された。
+                    </p>
+                    <p>
+                        注釈: 選ばれしもの-mse-imはどのサイトがソースか分からなくなってしまったと言い、調査によっても元データが見つからなかったため、提供元のサイトもしくはページが削除されたものであると判断した。
+                    </p>
+                    <hr>
+                    <p>2024/08/13</p>
+                    <p>
+                        SAV-0004の実験は塩ポテト博士の主導で行われた。<br>
+                        コードを読む限り異常は見られなかったので、Python環境で実行を行った。<br>
+                        以下はコードの一部と実行結果である。
+                        <section class="memo">
+                            <p style="overflow: scroll;white-space: nowrap;">
+                            def makeUranai(maseimo: MaseimoAPI.MaseimoAPI):<br>
+                            &emsp;notes = maseimo.readLTL(100)<br>
+                            &emsp;texts = list(map(lambda x:textAnalizer.editText(x["text"],emojiDelete=True),notes))<br>
+                            &emsp;nouns = sum(list(map(lambda x:textAnalizer.pickNoun(x),texts)),[])<br>
+                            &emsp;verbs = sum(list(map(lambda x:textAnalizer.pickVerb(x),texts)),[])<br>
+                            &emsp;month=["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]<br>
+                            &emsp;random.shuffle(month)<br>
+                            &emsp;advise=[]<br>
+                            &emsp;joint=["の","で","に"]<br>
+                            &emsp;for i in range(12):<br>
+                            &emsp;&emsp;text="一言:"<br>
+                            &emsp;&emsp;if(random.randint(0,2)==0):<br>
+                            &emsp;&emsp;&emsp;verb=verbs[random.randint(0,len(verbs)-1)]<br>
+                            &emsp;&emsp;&emsp;text+=verb<br>
+                            &emsp;&emsp;if(random.randint(0,2)==0):<br>
+                            &emsp;&emsp;&emsp;text+=nouns[random.randint(0,len(nouns)-1)]+joint[random.randint(0,len(joint)-1)]<br>
+                            &emsp;&emsp;if(random.randint(0,3)==0):<br>
+                            &emsp;&emsp;&emsp;text+=nouns[random.randint(0,len(nouns)-1)]+joint[random.randint(0,len(joint)-1)]<br>
+                            &emsp;&emsp;if(random.randint(0,3)==0):<br>
+                            &emsp;&emsp;&emsp;text+=nouns[random.randint(0,len(nouns)-1)]<br>
+                            &emsp;&emsp;verb=verbs[random.randint(0,len(verbs)-1)]<br>
+                            &emsp;&emsp;text+=nouns[random.randint(0,len(nouns)-1)]+"が"+verb<br>
+                            &emsp;&emsp;advise.append(text)<br>
+                            &emsp;item=[]<br>
+                            &emsp;for i in range(12):<br>
+                            &emsp;&emsp;item.append("ラッキーアイテム\n "+nouns[random.randint(0,len(nouns)-1)])<br>
+                            &emsp;img=Image.open(setting["uranaiBase"]).copy()<br>
+                            &emsp;fontBig=ImageFont.truetype(setting["uranaiFont"],70)<br>
+                            &emsp;fontSmall=ImageFont.truetype(setting["uranaiFont"],30)<br>
+                            &emsp;draw=ImageDraw.Draw(img)<br>
+                            &emsp;for i in range(12):<br>
+                            &emsp;&emsp;draw.text((300+1000*(i//6),10+1000/6*(i%6)),month[i],"#000000",font=fontBig)<br>
+                            &emsp;&emsp;draw.text((510+1000*(i//6),10+1000/6*(i%6)),item[i],"#000000",font=fontSmall)<br>
+                            &emsp;&emsp;draw.text((100+1000*(i//6),110+1000/6*(i%6)),advise[i],"#000000",font=fontSmall)<br>
+                            &emsp;nowTime=datetime.datetime.now()<br>
+                            &emsp;filename=f"uranai_{nowTime.year}_{nowTime.month}_{nowTime.day}.png"<br>
+                            &emsp;img.save(setting["uranaiSave"]+filename)<br>
+                            &emsp;if not DEBUG:<br>
+                            &emsp;&emsp;fileIds = maseimo.uploadMedia([setting["uranaiSave"]+filename])<br>
+                            &emsp;&emsp;maseimo.post("今日の占いを生成したよ",fileIds=fileIds)<br>
+                            </p>
+                        </section>
+                        <figure class="anomaly-image no-float">
+                            <img src="../assets/0004_1.png" alt="SAV-0004-1" style="width: 800px;max-width: 70vw;">
+                            <figcaption>SAV-0004-1</figcaption>
+                        </figure>
+                    </p>
+                    <hr>
+                    <p>2024/09/01</p>
+                    <p>
+                        その後の実験でも特に異常は見られず、通常の占い生成プログラムであると判断した塩ポテト博士は財団内で占い結果を共有することにした。
+                    </p>
+                    <hr>
+                    <p>2024/09/15</p>
+                    <p>以下のような占いが生成された。</p>
+                    <figure class="anomaly-image no-float">
+                        <img src="../assets/0004_2.png" alt="SAV-0004-1" style="width: 800px;max-width: 70vw;">
+                        <figcaption>9月15日のSAV-0004-1</figcaption>
+                    </figure>
+                    <p>
+                        占いを見ていた4月生まれの財団職員が3月生まれの財団職員3人を殺害する事件が発生した。<br>
+                        占いを見ていた3月生まれの財団職員が突然心停止し死亡した。<br>
+                        SAV-0004-1の財団内での共有は中止された。
+                    </p>
+                    <hr>
+                    <p>2024/■■/■■</p>
+                    <p>
+                        塩ポテト博士がSAV-0004-1の実験中に■■■■■■死亡した。<br>
+                        SAV-0004を使用した実験は凍結された。
+                    </p>
+                </section>
+                <!-- 追加キャプション付き画像 -->
+                <!--
+                <figure class="anomaly-image">
+                    <img src="placeholder2.jpg" alt="関連する別の画像">
+                    <figcaption>追加のキャプション</figcaption>
+                </figure>
+                -->
+            </article>
+            <article class="addition">
+                <h3>保存データ</h3>
+                <p>以下のデータへのアクセスは赤皿以上のライセンスを必要とします。</p>
+                <script>
+                    function loginButton() {
+                        let hiddenContents = document.getElementsByClassName("hidden")
+                        Array.from(hiddenContents).forEach(element => {
+                            element.style.display="block"
+                        });
+                    }
+                </script>
+                <button type="button" name="login" onclick="loginButton()">認証</button>
+                <style>
+                    .addition button {
+                        background-color: #1f1f1f;
+                        color: #ffffff;
+                        padding: 10px 30px;
+                        text-decoration: none;
+                        font-size: 18px;
+                        border: 2px solid #00509e;
+                        margin: 5px;
+                    }
+                    .addition button:hover {
+                        opacity: 0.8;
+                    }
+                    .addition h3 {
+                        font-size: 1.2rem;
+                        margin-bottom: 10px;
+                        color: #00509e;
+                        border-bottom: 2px solid #00509e;
+                        display: inline-block;
+                    }
+                    .addition p {
+                        margin-top: 10px;
+                        line-height: 1.8;
+                    }
+                    .addition{
+                        margin-bottom: 30px;
+                    }
+                    .username{
+                        background-color: #1f1f1f;
+                        color: #ff0000;
+                        padding: 5px;
+                    }
+                </style>
+                <p class="hidden" style="display: none;">
+                    認証データの確認中...<br>
+                    ログインしました。<br>
+                    ようこそ、att-077 <span class="username">塩ポテト博士</span><br>
+                    実行途中のプログラムが見つかりました。<br>
+                    <span class="username">sav_0004_main.py</span>を再開しますか？
+                </p>
+                <script>
+                    function runButton() {
+                        let hiddenContents = document.getElementsByClassName("hiddenImage")
+                        Array.from(hiddenContents).forEach(element => {
+                            element.style.display="block"
+                        });
+                    }
+                </script>
+                <button type="button" name="login" onclick="runButton()" class="hidden" style="display: none;">実行</button>
+                <figure class="anomaly-image no-float hiddenImage" style="display: none;">
+                    <img src="../assets/0004_3.png" alt="SAV-0004-1" style="width: 800px;max-width: 70vw;">
+                    <figcaption></figcaption>
+                </figure>
+            </article>
+            <hr>
+                <p>この記事は<a href="https://sushi.ski/@potatokun" target="_blank">@potatokun</a>によって書かれました。</p>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 PotatoTimeKun <br>このサイトはSCP財団のパロディであり、全ての情報はフィクションです。</p>
+        </div>
+    </footer>
+</body>
+</html>
