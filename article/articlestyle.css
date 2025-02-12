@@ -137,3 +137,7 @@ body {
 .no-float {
     float: none;
 }
+
+.blank {
+    background-color: #000;
+}
